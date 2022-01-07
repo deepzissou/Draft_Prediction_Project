@@ -24,3 +24,23 @@ CREATE TABLE stats (
 	NBA_fta_p_g DECIMAL,
 	NBA_ppg DECIMAL
 );
+
+DROP TABLE IF EXISTS combined_ncaa_player_stats;
+
+CREATE TABLE combined_ncaa_player_stats (
+	url VARCHAR,
+	name VARCHAR,
+	fgapg DECIMAL,
+	fgpct DECIMAL,
+	fgpg DECIMAL,
+	ftapg DECIMAL,
+	ftpct DECIMAL,
+	ftpg DECIMAL,
+	games INT,
+	height Decimal,
+	pfpg DECIMAL,
+	ptspg DECIMAL,
+	sospg Decimal,
+	trbpg Decimal,
+	is_pro INT
+);
