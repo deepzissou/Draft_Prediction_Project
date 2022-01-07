@@ -1,1 +1,0 @@
-select * from combined_ncaa_player_stats;
