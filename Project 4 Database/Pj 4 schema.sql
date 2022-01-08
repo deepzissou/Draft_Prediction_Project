@@ -43,4 +43,5 @@ CREATE TABLE combined_ncaa_player_stats (
 	sospg Decimal,
 	trbpg Decimal,
 	is_pro INT
+	
 );
