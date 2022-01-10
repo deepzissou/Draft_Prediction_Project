@@ -1,3 +1,7 @@
+# Inpiration for this script found at https://data.world/bgp12/nbancaacomparisons/
+# Ben Pierce's scraping methodology was adapted and expanded to work with a much larger NCAA dataset.
+
+
 import numpy as np
 import pandas as pd
 from bs4 import BeautifulSoup, SoupStrainer
