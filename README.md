@@ -1,6 +1,6 @@
 # Draft_Prediction_Project
 
-##https://deepzissou.github.io/Draft_Prediction_Project/
+https://deepzissou.github.io/Draft_Prediction_Project/
 
 ## Overview
 Develop a Machine Learning model to predict if a basketball player will go professional based on their player stats.
