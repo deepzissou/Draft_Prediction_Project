@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charstet="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Machine Learning</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- Our CSS -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+
+    <body>
+        <div class="jumbotron text-center typeface-js" style="background-color:black; color:white; width:100; font-family:'Qlassik Medium'; visibility: visible;">
+            <div class="container">
+              <div class="col-md-2" style="margin-right: 10px;">
+                <img src="college-basketball.jpg" class="basketballs"><a></a> 
+              </div>
+              <div class="col-md-1">
+                <a></a>
+              </div>
+              <div class="col-md-6">   
+                <h1>College Basketball Draft Project</h1><h2>Machine Learning</h2><p></p>  
+              </div>
+              <div class ="col-md-2">  
+                <img src="nbadraftlogo.png" class="logo">      
+              </div>     
+            </div>
+        </div>
+
+        <div class="row">
+        <div class="col-md-12">
+          <div class="container">
+            <p class="title">Machine Learning Model for Draft Predictions</p>
+            <h2 style="text-align: center;">To view our code visit <a href="https://github.com/deepzissou/Draft_Prediction_Project">Draft Prediction Project GitHub.</a></h2>
+            <p></p>
+            <div class="parent">
+              <img src="2021-NBA-Draft.jpg" class="intro">
+            </div>  
+          </div>
+        </div>
+        </div>  
+
+        <div class="row">
+        <div class="col-md-12">
+          <div class="container">    
+            <h1>Data Collection and Preprocessing</h1><p></p>
+            <p class = "data">The goal for this project was to create a model for using player stats to predict the likelihood of a player being drafted to the professional league.  The first task was finding data, lots of data.  This was acquired by web-scrpaing data from the site Sports Reference at <a href="https://www.sports-reference.com/">Sports Reference.com.</a>  Historical player statistics were pulled into a dataframe comprised of both drafted and undrafted players.  Players were assigned a binary status of 0 for those who did not play professioanlly and 1 for those who played in a professional league.  This provided a big data source to reduce our chances of an overfit model.  Data was then cleaned and pre-processed to prepare for model training.  The following statistics were chosen as our features to train and test our model.</p>
+            <p><h1>Chosen Features:</h1></p>
+            <h3 style="text-indent: 75pt"><b>fgapg = Field goal attempts per game</b></h3><p></p>
+            <h3 style="text-indent: 75pt"><b>fgpct = Field goal percent</b></h3><p></p>
+            <h3 style="text-indent: 75pt"><b>fgpg = Field goals per game</b></h3><p></p>
+            <h3 style="text-indent: 75pt"><b>ftapg = Free throw attempts per game</b></h3><p></p>
+            <h3 style="text-indent: 75pt"><b>ftpct = Free throw percent</b></h3><p></p>
+            <h3 style="text-indent: 75pt"><b>ftpg = Free throws per game</b></h3><p></p>
+            <h3 style="text-indent: 75pt"><b>height = Player height</b></h3><p></p>
+            <h3 style="text-indent: 75pt"><b>pfpg = Personal fouls per game</b></h3><p></p>
+            <h3 style="text-indent: 75pt"><b>ptspg = Points per game</b></h3><p></p>
+            <h3 style="text-indent: 75pt"><b>sospg = Strength of schedule</b></h3><p></p>
+            <h3 style="text-indent: 75pt" class = "last_line"><b>trbpg = Total rebounds per game</b></h3><p></p>
+            <p></p>
+          </div>
+        </div>
+        </div>
+
+        <div class="row">
+        <!--<div class="col-md-12">-->
+          <div class="container">            
+            <h1>Model Training</h1>  
+            <p class="train">For a Random distribution we randomly split our model in half making one half a train dataset and one half a test data set.  The train dataset was then split into random test train subsets.  We then modeled and trained our data to identify feature strengths.  The Correlation and Heatmap showed correlation between strength of schedule and field goal percent.  Strength of schedule showed to be a key feature in all modules.  The SHAP representation also showed points per game to have a strong importance.  After assessing models we chose a Random Forest Classifier (RFC) model for training our data and testing our predictions.  With the RFC model we were able to generate the relative feature importance among the player statistics.  The flexibility of the RFC also allowed us to ulitlize several features while maintaining accuracy.</p>
+          <div class="col-md-6">  
+            <h2>Correlation Matrix</h2></br>  
+              <img src="CorrMtx.png" class="corrmtx">
+          </div>    
+          <div class="col-md-6">               
+            <h2>Heat Map</h2></br>  
+              <img src="heatmap_corr.png" class="heatmap"> 
+          </div>    
+          <div class="col-md-6">    
+            <h2>Random Forest Classifier</h2></br>
+              <img src="rfc.jpg" class="rfc">
+          </div>    
+          <div class="col-md-6">    
+            <h2>SHAP</h2></br>
+              <img src="SHAP.jpg" class="SHAP">
+          </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="col-md-12">
+          <div class="container">
+            <h1>Time to test the predictions!</h1><p></p>
+            <p class="prediction">To prevent the algorithm from recognizing prior data we used the previously mentioned but unused test data set created from our scraped data.  The known outcomes were removed and the statistical data was input through our trained model.  We then generated a predicted outcome to test if predictions would match the known outcomes.  The outputs were then coded into a dataframe with expected values.  The two were compared for accuracy as seen below.</p>
+            <h2 class="table">Generated Table of Expected vs Predicted Results.</h2>
+            <div class ="parent">
+              <img src="results.jpg" class="results">
+            </div>
+            <p></p>
+            <h1 style="text-align: center;">Our results showed a 96.7% prediction accuracy.</h1>
+            <div class="parent">
+              <img src="it_works.jfif" class="it_worked">
+            </div>  
+          </div>
+        </div>
+        </div>
+
+        <div class = "row">
+        <div class="col-md-12">
+          <div class="container">              
+            <h2>Project was conducted by graduates of the January 2022 Data Analytics class at the University of Richmond.</h2><p></p>
+            <h2>To learn more about our team visit our links below.</h2>
+          </div>
+        </div>  
+        </div>
+
+        <div class="row">
+        <div class="col-md-12">
+          <div class="container"> 
+          </div>
+        </div>  
+        </div>
+
+        <footer class="bd-footer py-5 mt-5">
+          <div class = "container-fluid">
+            <div class="row">
+              <div class ="col-md-15">
+                <strong><h1 class="team">Contributors:</h1></strong><br>
+            <div class="row">                
+              <div class="col-md-2">                
+              </div>                
+            <div class="row">                
+              <div class="col-md-2">
+                <h2>Dwayne Jordan</h2>
+                  <li class="mb-2">
+                    <a href="">GitHub Bio</a>
+                  <li class="mb-3">  
+                    <a href="">LinkedIn</a>
+                  </li>  
+                  </li>                 
+              </div>   
+              <div class="col-md-2">
+                <h2>Galen Kellner</h2>
+                  <li class="mb-2">
+                    <a href="https://github.com/kellnergp">GitHub Bio</a>
+                  <li class="mb-3">  
+                    <a href="https://www.linkedin.com/in/galen-kellner-63b49b134/">LinkedIn</a>
+                  </li>
+                  </li>                     
+              </div>                             
+              <div class="col-md-2">
+                <h2>Marisa Kiger</h2>
+                  <li class="mb-2">
+                    <a href="https://github.com/MarisaKgr">GitHub Bio</a>
+                  <li class="mb-3">  
+                    <a href="https://www.linkedin.com/in/marisa-kiger-36033a157/">LinkedIn</a>
+                  </li>  
+                  </li>                                  
+              </div>
+              <div class="col-md-2">
+                <h2>Thomas Martin</h2>
+                  <li class="mb-2">
+                    <a href="https://github.com/Nensan90">GitHub Bio</a>
+                  <li class="mb-3">  
+                    <a href="https://www.linkedin.com/in/tmartin-jp/">LinkedIn</a>
+                  </li>  
+                  </li>                 
+              </div>
+            </div>
+            </div>
+            </div>
+          </div>     
+        </footer>
+
+    </body>
+</html>
