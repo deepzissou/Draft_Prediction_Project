@@ -1,6 +1,6 @@
 # Draft_Prediction_Project
 
-## Github pages link holder
+##https://deepzissou.github.io/Draft_Prediction_Project/
 
 ## Overview
 Develop a Machine Learning model to predict if a basketball player will go professional based on their player stats.
@@ -33,4 +33,3 @@ The “test” dataset was used to test the predictability of our model.  The kn
 The outputs of the model were combined with the known results into a dataframe and saved to the file randomForest_model_results.csv.
 ## Our model resulted with a 96.7% prediction accuracy.
 
-https://deepzissou.github.io/Draft_Prediction_Project/
