@@ -31,4 +31,4 @@ The “test” dataset was used to test the predictability of our model.  The kn
 
 ## Results
 The outputs of the model were combined with the known results into a dataframe and saved to the file randomForest_model_results.csv.
-## Our model resulted with a 96.7% precision accuracy.
+## Our model resulted with a 96.7% prediction accuracy.
