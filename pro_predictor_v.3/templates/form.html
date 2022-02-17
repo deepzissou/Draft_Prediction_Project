@@ -1,0 +1,31 @@
+<head>
+    <title>Data Input for NCAA Player Pro Prediction</title>
+</head>
+
+<body>
+    <h1>NCAA Basketball Player Pro Predictor</h1>
+    <p>Input player career NCAA stats to receive a prediction of their professional prospects determined by a Random Forest Classifier model trained on more than 70,000 historical records.</p>
+    <form action="/data" method="POST">
+        <!-- fields for player name and stats for input to the model-->
+        <p>Player Name <input type="text" name="name" /></p>
+
+        <p>Player's career Field Goal Attempts per Game <input type="number" step= .001 name="fgapg" /></p>
+        <p>Player's career Field Goal percent <input type="number" step= .001 name="fgpct" /></p>
+        <p>Player's career Field Goals per game <input type="number" step= .001 name="fgpg" /></p>
+
+        <p>Player's career Free Throw attempts per Game <input type="number" step= .001 name="ftapg" /></p>
+        <p>Player's career Free Throw percent <input type="number" step= .001 name="ftpct" /></p>
+        <p>Player's career Free Throws per Game <input type="number" step= .001 name="ftpg" /></p>
+
+        <p>Player's career Games played <input type="number" step= .001 name="games" /></p>
+        <p>Player's height in inches <input type="number" step= .001 name="height" /></p>
+
+        <p>Player's career Personal Fouls per Game <input type="number" step= .001 name="pfpg" /></p>
+        <p>Player's career Points per Game <input type="number" step= .001 name="ptspg" /></p>
+
+        <p>Player's career Strength of Schedule <input type="number" step= .001 name="sospg" /></p>
+        <p>Player's career Total Rebounds per Game <input type="number" step= .001 name="trbpg" /></p>
+
+        <p><input type="submit" value="Submit" /></p>
+    </form>
+</body>
